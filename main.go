@@ -3,39 +3,26 @@ package main
 import "fmt"
 
 func main() {
-	// string
-	var nameOne string = "a"
-	var nameTwo = "b"
-	var nameThree string
+	a := 11
+	b := "22"
 
-	fmt.Println(nameOne, nameTwo, nameThree)
+	// print
+	fmt.Print("Hello, ")
+	fmt.Print("Hello \n")
+	fmt.Print("Hello \n")
 
-	nameOne = "aa"
-	nameThree = "cc"
+	// print line
+	fmt.Println("Hello 1")
+	fmt.Println("Hello 2")
+	fmt.Println("Hello 2", a, " and ", b)
 
-	fmt.Println(nameOne, nameTwo, nameThree)
+	// print format string
+	fmt.Printf("Hello %v and %v \n", a, b)
+	fmt.Printf("Hello %q and %q \n", a, b)
+	fmt.Printf("a is type of %T \n", a)
+	fmt.Printf("my b is %0.2f \n", 123.12)
 
-	nameFour := "d"
-
-	fmt.Println(nameFour)
-
-	// int
-	var numberOne int = 1
-	var numberTwo = 2
-	numberThree := 3
-
-	fmt.Println(numberOne, numberTwo, numberThree)
-
-	// bits & memory
-	var numberFour int8 = 25
-	var numberFive int8 = -128
-	var numberSix uint16 = 256
-
-	fmt.Println(numberFour, numberFive, numberSix)
-
-	var aOne float32 = 25.12
-	var aTwo float64 = 123123121231231231233.123
-	aThree := 1.5
-
-	fmt.Println(aOne, aTwo, aThree)
+	// sprintf save format string
+	var str = fmt.Sprintf("my a is %v and b is %v \n", a, b)
+	fmt.Println("save string is ", str)
 }
