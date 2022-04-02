@@ -3,26 +3,30 @@ package main
 import "fmt"
 
 func main() {
-	a := 11
-	b := "22"
+	// var ages [3]int = [3]int{10, 20, 30}
+	var ages = [3]int{10, 20, 30}
 
-	// print
-	fmt.Print("Hello, ")
-	fmt.Print("Hello \n")
-	fmt.Print("Hello \n")
+	names := [4]string{"John", "Jane", "Joe", "Peach"}
+	names[1] = "Doe"
 
-	// print line
-	fmt.Println("Hello 1")
-	fmt.Println("Hello 2")
-	fmt.Println("Hello 2", a, " and ", b)
+	fmt.Println(ages, len(ages))
+	fmt.Println(names, len(names))
 
-	// print format string
-	fmt.Printf("Hello %v and %v \n", a, b)
-	fmt.Printf("Hello %q and %q \n", a, b)
-	fmt.Printf("a is type of %T \n", a)
-	fmt.Printf("my b is %0.2f \n", 123.12)
+	// slices (use arrays under the hood)
+	var scores = []int{10, 20, 30}
+	scores[2] = 40
+	scores = append(scores, 50)
 
-	// sprintf save format string
-	var str = fmt.Sprintf("my a is %v and b is %v \n", a, b)
-	fmt.Println("save string is ", str)
+	fmt.Println(scores, len(scores))
+
+	// slices ranges
+	rangeOne := names[1:3]
+	rangeTwo := names[2:]
+	rangeThree := names[:3]
+
+	fmt.Println(rangeOne, rangeTwo, rangeThree)
+
+	rangeOne = append(rangeOne, "Koopa")
+	fmt.Println(rangeOne)
+
 }
