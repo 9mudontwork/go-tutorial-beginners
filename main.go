@@ -3,30 +3,32 @@ package main
 import "fmt"
 
 func main() {
-	x := 0
-	for x < 10 {
-		fmt.Printf("x %#v\n", x)
-		x++
+	age := 45
+
+	fmt.Println(age <= 50)
+	fmt.Println(age >= 50)
+	fmt.Println(age == 50)
+	fmt.Println(age != 50)
+
+	if age < 30 {
+		fmt.Println("age is less than 30")
+	} else if age < 40 {
+		fmt.Println("age is less than 40")
+	} else {
+		fmt.Println("age is not less than 40")
 	}
 
-	for i := 0; i < 10; i++ {
-		fmt.Printf("i %#v\n", i)
+	names := []string{"mario", "luigi", "yoshi", "peach", "bowser"}
+
+	for index, val := range names {
+		if index == 1 {
+			fmt.Println("continuing at pos", index)
+			continue
+		}
+		if index > 2 {
+			fmt.Println("breaking at pos", index)
+			break
+		}
+		fmt.Printf("the value at pos %v is %v \n", index, val)
 	}
-
-	names := []string{"John", "Paul", "George", "Ringo"}
-
-	for i := 0; i < len(names); i++ {
-		fmt.Println(names[i])
-	}
-
-	for i, name := range names {
-		fmt.Println(i, name)
-	}
-
-	for _, name := range names {
-		fmt.Println(name)
-		name = "New Name"
-	}
-
-	fmt.Println(names)
 }
